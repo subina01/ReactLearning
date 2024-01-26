@@ -29,10 +29,12 @@ class DishDetail extends Component
             {   
                
                 return (  
+                    <div className="container">
                     <li key = {comment.id} className="mb-2">
                         <p>{comment.comment}</p>
-                        <p> --{comment.author}, {comment.date}</p>
+                       <p>--{comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(comment.date))}</p>
                     </li>
+                    </div>
                 );
                
             });
